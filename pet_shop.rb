@@ -56,3 +56,8 @@ def add_pet_to_stock(pet_shop, new_pet)
   pets = pet_shop[:pets]
   pets.push(new_pet)
 end
+
+def customer_pet_count(customer_pets)
+  number_of_pets = customer_pets[:pets].count()
+  return number_of_pets
+end
