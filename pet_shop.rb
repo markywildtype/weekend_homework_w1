@@ -78,8 +78,12 @@ def sell_pet_to_customer(pet_shop, pet, customer)
   if pet == nil
     return 0
   else
-    customer[:pets].push(pet)
-    pet_shop[:admin][:total_cash] += pet[:price]
-    pet_shop[:admin][:pets_sold] += 1
+    if customer[:cash] < pet[:price]
+      return 0
+    else
+      customer[:pets].push(pet)
+      pet_shop[:admin][:total_cash] += pet[:price]
+      pet_shop[:admin][:pets_sold] += 1
+    end
   end
 end
